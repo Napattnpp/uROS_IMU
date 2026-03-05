@@ -20,5 +20,11 @@ void loop() {
   // motor_encoder.run();
   imu.run();
 
-  uros.publish(imu.publish_state, imu.yaw);
+  uros.publish(
+    imu.publish_state,
+    imu.yaw,
+    imu.qw, imu.qx, imu.qy, imu.qz,
+    imu.gx, imu.gy, imu.gz,
+    imu.ax, imu.ay, imu.az
+  );
 }
